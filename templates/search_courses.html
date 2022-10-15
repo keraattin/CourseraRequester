@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search Courses
+{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <h1>Search Courses</h1>
+            <form action="search_courses" method="post">
+                <p><input class="form-control" type="text" placeholder="Search Query" name="search_query">
+                <p><input class="btn btn-primary" type="submit" value="Search">
+            </form>
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

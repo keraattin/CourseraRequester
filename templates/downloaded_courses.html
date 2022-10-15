@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Downloaded Courses
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Query</th>
+        <th scope="col">Name</th>
+        <th scope="col">Created Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for data in courses %}
+        <tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.query }}</td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.created_date }}</td>
+            <td>
+                <a href = {{ url_for('views_blueprint.download_file' ,filename=data.name) }}>
+                    <button type="button" class="btn btn-primary">
+                        Download
+                    </button>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+
